@@ -11,13 +11,20 @@
     <style>
         /* --- VARIABLES --- */
         :root { 
-            --primary-blue: #003580; --action-green: #00a651; --action-green-hover: #008c44;
-            --text-dark: #1a1a1a; --white: #ffffff; 
+            --primary-blue: #003580; 
+            --action-green: #00a651; 
+            --action-green-hover: #008c44;
+            --text-dark: #1a1a1a; 
+            --white: #ffffff; 
             --navy-bg: #002855;      
-            --gold-accent: #d4af37; --gold-hover: #febb02;
-            --orange-btn: #ff8c00; --wa-green: #25d366;
-            --font-main: 'Montserrat', sans-serif; --font-title: 'Playfair Display', serif;
+            --gold-accent: #d4af37; 
+            --gold-hover: #febb02;
+            --orange-btn: #ff8c00; 
+            --wa-green: #25d366;
+            --font-main: 'Montserrat', sans-serif; 
+            --font-title: 'Playfair Display', serif;
         }
+        
         body { font-family: var(--font-main); margin: 0; padding: 0; background-color: #f9f9f9; color: var(--text-dark); overflow-x: hidden; }
 
         /* --- NAVBAR --- */
@@ -34,9 +41,9 @@
             width: 90%; max-width: 1200px; margin: 0 auto; 
             display: flex; justify-content: space-between; align-items: center; 
         }
-        .nav-logo { display: flex; align-items: center; text-decoration: none; gap: 5px; }
-        .nav-logo img { height: 60px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
-        .nav-logo-text { font-family: var(--font-title); color: var(--white); font-size: 24px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; line-height: 1; display: flex; flex-direction: column; }
+        .nav-logo { display: flex; align-items: center; text-decoration: none; gap: 10px; }
+        .nav-logo img { height: 50px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+        .nav-logo-text { font-family: var(--font-title); color: var(--white); font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; line-height: 1; display: flex; flex-direction: column; }
         .nav-links { display: flex; gap: 30px; align-items: center; }
         .nav-link { color: var(--white); text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; padding: 5px 0; }
         .nav-link:hover { color: var(--gold-accent); border-bottom: 2px solid var(--gold-accent); }
@@ -51,7 +58,7 @@
         }
         .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0, 40, 85, 0.5), rgba(0, 30, 80, 0.7)); z-index: 1; }
         .hero-content { position: relative; z-index: 10; text-align: center; margin-bottom: 40px; color: var(--white); }
-        .hero-title { font-family: var(--font-title); font-size: 52px; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; text-shadow: 0 4px 20px rgba(0,0,0,0.6); letter-spacing: 2px; }
+        .hero-title { font-family: var(--font-title); font-size: 48px; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; text-shadow: 0 4px 20px rgba(0,0,0,0.6); letter-spacing: 2px; }
         .hero-subtitle { font-size: 18px; font-weight: 300; letter-spacing: 1px; opacity: 0.95; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 
         /* --- COTIZADOR --- */
@@ -74,7 +81,7 @@
         .btn-cotizar { grid-column: 1 / -1; background-color: var(--action-green); color: white; font-size: 18px; font-weight: 800; border: none; padding: 18px; border-radius: 8px; cursor: pointer; margin-top: 10px; transition: all 0.2s; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 5px 0 #007a3d; width: 100%; }
         .btn-cotizar:hover { background-color: var(--action-green-hover); transform: translateY(2px); }
 
-        /* --- SECCIÓNES GENÉRICAS --- */
+        /* --- SECCIONES GENERICAS --- */
         .section-wrapper { padding: 80px 20px; text-align: center; }
         .section-bg-gray { background-color: #f0f0f0; }
         .section-header h2 { font-family: var(--font-title); font-size: 42px; color: var(--navy-bg); font-weight: 700; margin-bottom: 10px; letter-spacing: -1px; }
@@ -91,50 +98,59 @@
         .service-desc { font-size: 14px; color: #cbd5e1; line-height: 1.6; font-weight: 400; }
 
         /* =========================================
-           NUEVOS ESTILOS DEL CARRUSEL (CON FLECHAS Y PUNTOS)
+           NUEVOS ESTILOS DEL CARRUSEL (FLOTA)
         ========================================= */
         .new-carousel-container {
             position: relative;
-            max-width: 900px; /* Ancho máximo del carrusel */
+            max-width: 900px;
             margin: 0 auto;
             background: #fff;
             border-radius: 20px;
             box-shadow: 0 25px 50px rgba(0,0,0,0.15);
             overflow: hidden;
         }
+        
         .new-carousel-track-container {
             position: relative;
             overflow: hidden;
-            /* Altura automática basada en el contenido */
+            /* La altura se ajustará con JS o CSS */
         }
+        
         .new-carousel-track {
-            padding: 0; margin: 0; list-style: none;
-            position: relative;
-            display: flex; /* Alinea los slides horizontalmente */
+            padding: 0; margin: 0; 
+            list-style: none;
+            display: flex; /* Alinea los slides en fila */
             transition: transform 0.5s ease-in-out;
+            width: 100%;
         }
+        
         .new-carousel-slide {
-            min-width: 100%; /* Cada slide ocupa el 100% del ancho */
+            min-width: 100%; /* Cada slide ocupa el 100% del contenedor */
             box-sizing: border-box;
-            position: relative; /* Importante para el posicionamiento JS */
+            background: #fff;
         }
+        
         .new-carousel-image {
             width: 100%;
-            height: 350px; /* Altura fija para las imágenes */
+            height: 350px;
             object-fit: cover;
             border-bottom: 4px solid var(--gold-accent);
+            display: block;
         }
+        
         .new-carousel-content {
-            padding: 40px;
+            padding: 30px 40px 40px 40px;
             text-align: center;
         }
+        
         .new-carousel-content h3 {
             font-family: var(--font-title);
             font-size: 32px;
             color: var(--navy-bg);
-            margin-bottom: 15px;
+            margin: 0 0 15px 0;
             font-weight: 700;
         }
+        
         .new-carousel-content p {
             font-size: 16px;
             color: #555;
@@ -143,6 +159,7 @@
             max-width: 600px;
             margin-left: auto; margin-right: auto;
         }
+        
         .capacity-badge {
             display: inline-block;
             background: var(--navy-bg);
@@ -153,12 +170,13 @@
             font-size: 14px;
             box-shadow: 0 5px 15px rgba(0, 40, 85, 0.2);
         }
-        /* Flechas de Navegación */
+
+        /* Flechas */
         .new-carousel-btn {
             position: absolute;
-            top: 40%; /* Alineado verticalmente con la imagen */
+            top: 38%; /* Ajustado para estar sobre la imagen */
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             color: var(--navy-bg);
             border: none;
             width: 50px; height: 50px;
@@ -168,21 +186,18 @@
             z-index: 10;
             transition: 0.3s;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
         .new-carousel-btn:hover { background: var(--navy-bg); color: var(--gold-accent); }
         .new-carousel-btn--left { left: 20px; }
         .new-carousel-btn--right { right: 20px; }
-        /* Clase para ocultar flechas al inicio/final */
-        .is-hidden { display: none; }
 
-        /* Puntos de Navegación (Dots) */
+        /* Puntos (Dots) */
         .new-carousel-nav {
             display: flex;
             justify-content: center;
-            padding: 20px 0 30px 0; /* Espacio abajo */
-            gap: 10px;
+            padding: 0 0 30px 0;
+            gap: 12px;
         }
         .new-carousel-dot {
             border: none;
@@ -191,15 +206,15 @@
             background: #ddd;
             cursor: pointer;
             transition: 0.3s all ease;
+            padding: 0;
         }
-        .new-carousel-dot.current-slide {
+        .new-carousel-dot.active-dot {
             background: var(--navy-bg);
-            width: 35px; /* Se estira al estar activo */
+            width: 30px; /* Estilo alargado para el activo */
             border-radius: 10px;
         }
 
-
-        /* --- FOOTER & OTROS --- */
+        /* --- FOOTER & MODALES --- */
         footer { background: var(--navy-bg); color: #94a3b8; padding: 40px 20px; text-align: center; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.1); }
         #resultados { margin-top: 30px; display: none; width: 100%; }
         .ruta-header { background: var(--navy-bg); color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; font-weight: 600; border-left: 5px solid var(--gold-accent); }
@@ -210,52 +225,98 @@
         .tarjeta-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
         .tarjeta-price { flex: 0 0 180px; text-align: right; display: flex; flex-direction: column; justify-content: center; border-left: 2px solid #f5f5f5; padding-left: 25px; }
         .price-current { font-size: 32px; font-weight: 900; color: var(--action-green); }
+        .btn-reservar { background-color: var(--primary-blue); color: white; padding: 14px; border-radius: 8px; font-weight: 800; cursor: pointer; border:none; width: 100%; margin-top: 5px; transition: 0.3s; }
+        .btn-reservar:hover { background-color: var(--navy-bg); }
+        
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
         .modal-box { background: white; width: 90%; max-width: 450px; padding: 30px; border-radius: 20px; text-align: center; position: relative; }
         .loading-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.95); z-index: 3000; display: none; align-items: center; justify-content: center; flex-direction: column; }
         .spinner { width: 50px; height: 50px; border: 5px solid #eee; border-top: 5px solid var(--action-green); border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .hero-title { font-size: 32px; } .nav-links { display: none; } .nav-container { justify-content: center; }
-            .nav-logo img { height: 40px; } .nav-logo-text { font-size: 16px; }
+            .hero-title { font-size: 32px; } 
+            .nav-links { display: none; } 
+            .nav-container { justify-content: center; }
             .form-grid, .contact-section { grid-template-columns: 1fr; }
-            /* Ajustes del nuevo carrusel en móvil */
+            
+            /* Ajustes Carrusel Movil */
             .new-carousel-image { height: 220px; }
-            .new-carousel-content { padding: 25px 20px; }
-            .new-carousel-content h3 { font-size: 26px; }
-            .new-carousel-btn { width: 40px; height: 40px; font-size: 16px; }
-            .new-carousel-btn--left { left: 10px; } .new-carousel-btn--right { right: 10px; }
+            .new-carousel-content h3 { font-size: 24px; }
+            .new-carousel-btn { width: 40px; height: 40px; font-size: 16px; top: 35%; }
+            .new-carousel-btn--left { left: 10px; } 
+            .new-carousel-btn--right { right: 10px; }
 
             .tarjeta { flex-direction: column; text-align: left; }
             .tarjeta-price { border-left: none; padding-left: 0; border-top: 1px solid #eee; padding-top: 15px; text-align: left; flex-direction: row; justify-content: space-between; align-items: center; }
+            .btn-reservar { width: auto; padding: 10px 20px; margin-top: 0; }
         }
     </style>
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="nav-container">
-        <a href="#" class="nav-logo">
-            <img src="https://i.imgur.com/lS3Crlx.png" alt="Luxury Transfers Riviera">
-            <span class="nav-logo-text">Luxury Transfers Riviera</span>
-        </a>
-        <div class="nav-links">
-            <a href="#inicio" class="nav-link">Inicio</a>
-            <a href="#servicios" class="nav-link">Servicios</a>
-            <a href="#flota" class="nav-link">Flota</a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="https://i.imgur.com/lS3Crlx.png" alt="Logo">
+                <span class="nav-logo-text">Luxury Transfers Riviera</span>
+            </a>
+            <div class="nav-links">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#flota" class="nav-link">Flota</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="loading-overlay" id="loadingOverlay"><div class="spinner"></div><p style="margin-top:15px; font-weight:700;">COTIZANDO...</p></div>
+    
+    <div class="modal-overlay" id="modalTyC">
+        <div class="modal-box" style="text-align: left;">
+            <button style="position:absolute; top:15px; right:15px; border:none; background:transparent; font-weight:bold; cursor:pointer;" onclick="cerrarTyC()">X</button>
+            <h3 style="color:var(--primary-blue);">Términos y Condiciones</h3>
+            <div style="font-size:13px; line-height:1.5; color:#555;"><p>1. Cancelaciones 24h antes: 100% reembolso.</p><p>2. Espera máxima: 60 min aeropuerto, 15 min hotel.</p><p>3. Multa limpieza: $2,500 MXN.</p></div>
+            <button class="btn-reservar" onclick="cerrarTyC()" style="margin-top:15px;">ENTENDIDO</button>
         </div>
     </div>
-</nav>
 
-<div class="loading-overlay" id="loadingOverlay"><div class="spinner"></div><p style="margin-top:15px; font-weight:700;">PROCESANDO...</p></div>
-<div class="modal-overlay" id="modalTyC"><div class="modal-box" style="text-align: left;"><button style="position:absolute; top:15px; right:15px; border:none; background:transparent; font-weight:bold; cursor:pointer;" onclick="cerrarTyC()">X</button><h3 style="color:var(--primary-blue);">Términos y Condiciones</h3><div style="font-size:13px; line-height:1.5; color:#555;"><p>1. Cancelaciones 24h antes: 100% reembolso.</p><p>2. Espera máxima: 60 min aeropuerto, 15 min hotel.</p><p>3. Multa limpieza: $2,500 MXN.</p></div><button class="btn-cotizar" onclick="cerrarTyC()" style="margin-top:15px;">ENTENDIDO</button></div></div>
-<div class="modal-overlay" id="modalConfirmacion"><div class="modal-box"><button style="position:absolute; top:15px; right:15px; border:none; background:transparent; font-weight:bold; cursor:pointer;" onclick="cerrarModal()">X</button><div style="font-size:60px; color:var(--action-green); margin-bottom:15px;"><i class="fas fa-check-circle"></i></div><h2 style="color:var(--primary-blue); margin:0;">¡Solicitud Recibida!</h2><p style="color:#888; font-size:12px; margin-top:5px;">CÓDIGO DE REFERENCIA:</p><div id="codigoDisplay" style="font-size:28px; font-weight:900; color:var(--primary-blue); letter-spacing:2px; margin-bottom:15px;">LTR-????</div><p style="color:#555; font-size:14px;">Hemos recibido tu solicitud. Un asesor te contactará lo más breve posible.</p><div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;"><a href="#" target="_blank" id="btnWhatsapp" style="background:#25d366; color:white; padding:12px; border-radius:8px; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> Confirmar por WhatsApp</a><a href="#" id="btnMail" style="background:#333; color:white; padding:12px; border-radius:8px; text-decoration:none; font-weight:bold;"><i class="fas fa-envelope"></i> Enviar Correo</a></div></div></div>
-
-<section id="inicio" class="hero-section">
-    <div class="overlay"></div>
-    <div class="hero-content">
-        <h1 class="hero-title">Transporte Premium</h1>
-        <div class="hero-subtitle">Excelencia, Seguridad y Confort en la Riviera Maya</div>
+    <div class="modal-overlay" id="modalConfirmacion">
+        <div class="modal-box">
+            <button style="position:absolute; top:15px; right:15px; border:none; background:transparent; font-weight:bold; cursor:pointer;" onclick="cerrarModal()">X</button>
+            <div style="font-size:60px; color:var(--action-green); margin-bottom:15px;"><i class="fas fa-check-circle"></i></div>
+            <h2 style="color:var(--primary-blue); margin:0;">¡Solicitud Recibida!</h2>
+            <p style="color:#888; font-size:12px; margin-top:5px;">CÓDIGO DE REFERENCIA:</p>
+            <div id="codigoDisplay" style="font-size:28px; font-weight:900; color:var(--primary-blue); letter-spacing:2px; margin-bottom:15px;">LTR-????</div>
+            <p style="color:#555; font-size:14px;">Hemos recibido tu solicitud. Un asesor te contactará lo más breve posible.</p>
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+                <a href="#" target="_blank" id="btnWhatsapp" style="background:#25d366; color:white; padding:12px; border-radius:8px; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> Confirmar por WhatsApp</a>
+                <a href="#" id="btnMail" style="background:#333; color:white; padding:12px; border-radius:8px; text-decoration:none; font-weight:bold;"><i class="fas fa-envelope"></i> Enviar Correo</a>
+            </div>
+        </div>
     </div>
-    <div class="main-container"><div class="search-box-container"><div class="search-box-inner"><div class="options-bar"><div class="radio-group"><label class="radio-label"><input type="radio" name="tipoViaje" value="SENCILLO" checked onchange="updateTipoServicio('SENCILLO')"> Solo Ida</label><label class="radio-label"><input type="radio" name="tipoViaje" value="REDONDO" onchange="updateTipoServicio('REDONDO')"> Ida y Vuelta</label></div><select id="tipoServicio" style="display:none;"><option value="SENCILLO">Sencillo</option><option value="REDONDO">Redondo</option></select><div style="width:100px;"><select id="moneda" onchange="limpiarResultados()" style="width:100%; padding:8px; font-weight:700; border-radius:5px;"><option value="MXN">MXN</option><option value="USD">USD</option></select></div></div><div class="direction-tabs"><div class="tab-btn active" id="btnDesdeAero" onclick="setDireccion('desdeAero')"><i class="fas fa-plane-arrival"></i> Desde Aeropuerto</div><div class="tab-btn" id="btnHaciaAero" onclick="setDireccion('haciaAero')"><i class="fas fa-plane-departure"></i> Hacia Aeropuerto</div><div class="tab-btn" id="btnPersonalizado" onclick="setDireccion('personalizado')"><i class="fas fa-map-marker-alt"></i> Punto a Punto</div></div><div class="form-grid"><div class="input-wrapper"><label><i class="fas fa-map-pin"></i> Origen</label><input type="text" id="origen" placeholder="Aeropuerto Cancún (CUN)" readonly></div><div class="input-wrapper"><label><i class="fas fa-map-marker-alt"></i> Destino</label><input type="text" id="destino" placeholder="Hotel, Airbnb o Destino..."></div><div class="input-wrapper"><label><i class="far fa-calendar-alt"></i> Fecha Ida</label><input type="date" id="fechaIda"></div><div class="input-wrapper" id="divFechaVuelta" style="display:none;"><label><i class="far fa-calendar-check"></i> F
+
+    <section id="inicio" class="hero-section">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Transporte Premium</h1>
+            <div class="hero-subtitle">Excelencia, Seguridad y Confort en la Riviera Maya</div>
+        </div>
+        
+        <div class="main-container">
+            <div class="search-box-container">
+                <div class="search-box-inner">
+                    <div class="options-bar">
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="tipoViaje" value="SENCILLO" checked onchange="updateTipoServicio('SENCILLO')"> Solo Ida</label>
+                            <label class="radio-label"><input type="radio" name="tipoViaje" value="REDONDO" onchange="updateTipoServicio('REDONDO')"> Ida y Vuelta</label>
+                        </div>
+                        <div style="width:100px;">
+                            <select id="moneda" onchange="limpiarResultados()" style="width:100%; padding:8px; font-weight:700; border-radius:5px;"><option value="MXN">MXN</option><option value="USD">USD</option></select>
+                        </div>
+                    </div>
+
+                    <div class="direction-tabs">
+                        <div class="tab-btn active" id="btnDesdeAero" onclick="setDireccion('desdeAero')"><i class="fas fa-plane-arrival"></i> Desde Aeropuerto</div>
+                        <div class="tab-btn" id="btnHaciaAero" onclick="setDireccion('haciaAero')"><i class="fas fa-plane-departure"></i> Hacia Aeropuerto</div>
+           
